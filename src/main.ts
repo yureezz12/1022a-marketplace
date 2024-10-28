@@ -40,7 +40,8 @@ app.get("/usuarios", async(req,res)=>{
         const [result, fields] = await conection.query("SELECT * from usuarios")
         await conection.end()
         //3 - Devolver os dados pra quem pediu
-        res.send(result)
+        res.send(result) 
+
     }catch(e){
         res.status(500).send("Server ERROR")
     }
